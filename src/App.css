@@ -529,6 +529,7 @@ contact us page
 
     & input,
     & textarea {
+      resize: none;
       font-family: "urbanist";
       background-color: #000;
       font-size: 1.6rem;
