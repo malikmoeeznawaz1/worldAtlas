@@ -22,11 +22,10 @@ const Country = () => {
   if (isPending) return <Loader />;
 
   const searchCountry = (country) => {
-    if (search) {
-      return country.name.common.toLowerCase().includes(search.toLowerCase());
-    }
-    return country;
+    if (!search) return true; // Agar search empty hai, to saari countries return karo
+    return country.name.common.toLowerCase().includes(search.toLowerCase());
   };
+  
 
   const searchCountries = countries.filter((country) => searchCountry(country));
 
