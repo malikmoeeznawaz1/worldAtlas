@@ -1,5 +1,7 @@
 import { useEffect, useState, useTransition } from "react"
 import { getCountryData } from "../api/postApi";
+import Loader from "../components/UI/Loader";
+import CountryCard from "../components/layout/CountryCard";
 
 const Country = () => {
 
@@ -14,11 +16,17 @@ const Country = () => {
     });
   },[])
 
-  if(isPending) return <Loader/>;
+  if(isPending) return <Loader/>; 
 
-  return (
-    <h1>Country</h1>
-  )
+  return <section className="country-section ">
+    <ul className="grid grid-four-cols">{
+      countries.map((currCountry, index)=>{
+        return <CountryCard country = {currCountry} key={index}/>
+      })
+      }
+
+    </ul>
+  </section>
 }
 
 export default Country
