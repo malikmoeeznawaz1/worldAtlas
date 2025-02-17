@@ -13,6 +13,7 @@ const SearchFilter = ({ search, setSearch, filter, setFilter, countries, setCoun
     const sortCountry = [...countries].sort((a,b)=>{
       return value === "asc" ? a.name.common.localeCompare(b.name.common) : b.name.common.localeCompare(a.name.common);
     });
+    setCountries(sortCountry);
   }
 
   return (
