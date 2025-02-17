@@ -32,7 +32,7 @@ const Contact = () => {
             className="form-control"
             rows="10"
             placeholder="Enter Your Message"
-            autoComplete="false"
+            autoComplete="off"
             required
           ></textarea>
           <button type="submit" value="send">
