@@ -25,9 +25,13 @@ const Country = () => {
     if (!search) return true; // Agar search empty hai, to saari countries return karo
     return country.name.common.toLowerCase().includes(search.toLowerCase());
   };
-  
 
-  const searchCountries = countries.filter((country) => searchCountry(country));
+  const filterRegion = (country) => {
+    if(filter === "all") return 1;
+    return country.region === filter;
+  }  
+
+  const searchCountries = countries.filter((country) => searchCountry(country) && filterRegion(country));
 
   return (
     <section className="country-section ">
